@@ -253,27 +253,31 @@ body {
 /* Stop Guessing Section - W574 sides, H240 top/bottom, H48 spacing */
 .stop-guessing-section {
     position: relative;
-    padding: 240px 574px;
+    padding: 240px 96px;
     background: #fff;
     text-align: center;
 }
 
 .stop-guessing-section .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 48px 0;
 }
 
 .content-wrapper h2 {
-    font-size: 36px;
+    font-size: 48px;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 48px;
     font-family: 'Jost', sans-serif;
 }
 
 .content-wrapper p {
-    font-size: 22px;
-    line-height: 1.6;
+    font-size: 20px;
+    line-height: 1.8;
     font-family: 'Jost', sans-serif;
     font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .highlight-text {
@@ -366,13 +370,13 @@ body {
 /* Pro Section - W422 sides, W574 center, H240 top/bottom, H48 spacing */
 .pro-section {
     position: relative;
-    padding: 240px 422px;
+    padding: 240px 96px;
     background: #fff;
     text-align: center;
 }
 
 .pro-section .pro-content {
-    max-width: 574px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -381,17 +385,19 @@ body {
 }
 
 .pro-content h2 {
-    font-size: 36px;
+    font-size: 48px;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 48px;
     font-family: 'Jost', sans-serif;
 }
 
 .pro-content p {
-    font-size: 22px;
-    line-height: 1.6;
+    font-size: 20px;
+    line-height: 1.8;
     font-family: 'Jost', sans-serif;
     font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .quotations-link {
