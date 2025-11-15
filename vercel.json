@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/home page/$1"
+    }
+  ],
+  "cleanUrls": true
+}
