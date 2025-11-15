@@ -134,6 +134,14 @@ body {
     gap: 12px;
 }
 
+.logo-image {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
 .logo-text {
     font-size: 28px;
     font-family: 'Jost', sans-serif;
@@ -190,15 +198,15 @@ body {
 }
 
 .hero-text h1 {
-    font-size: 72px;
+    font-size: 64px;
     font-weight: 400;
     margin-bottom: 24px;
     font-family: 'Jost', sans-serif;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 .hero-subtitle {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.6;
     font-family: 'Jost', sans-serif;
     font-weight: 300;
