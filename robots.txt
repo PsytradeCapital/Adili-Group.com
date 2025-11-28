@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://adiligroupke.com/sitemap.xml
+
+# Important pages for sitelinks
+Allow: /About%20us%20page.html
+Allow: /Services%20page.html
+Allow: /Portfolio%20Page.html
+Allow: /Quotations%20Page.html
+Allow: /Contacts%20Page.html

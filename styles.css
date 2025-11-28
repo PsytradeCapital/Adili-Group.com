@@ -1,0 +1,4222 @@
+
+/* GLOBAL PREMIUM SCALING UPGRADE */
+:root { --desktop-padding: 5vw; --desktop-gap: 2.5vw; }
+
+/* Square grids */
+.portfolio-item,
+.kazi-image-box,
+.aboutus-img-box,
+.image-container-left-top,
+.image-container-left-bottom,
+.image-container-right,
+.image-container-full {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.portfolio-item img,
+.kazi-image-box img,
+.aboutus-img-box img,
+.image-container-left-top img,
+.image-container-left-bottom img,
+.image-container-right img,
+.image-container-full img {
+  width:100%; height:100%; object-fit:cover;
+}
+
+/* Premium paddings */
+.portfolio-container,
+.kazi-container,
+.digital-images,
+.aboutus-container,
+.consultancy-section,
+.packaging-section,
+.websites-grid,
+.scroll-container {
+  padding-left: var(--desktop-padding) !important;
+  padding-right: var(--desktop-padding) !important;
+}
+
+/* Gap normalization */
+.portfolio-container,
+.kazi-container,
+.digital-images,
+.websites-grid,
+.scroll-container {
+  gap: var(--desktop-gap) !important;
+}
+
+/* SERVICES consistency */
+.service-card .image-wrapper img { object-fit:cover !important; }
+
+/* FOOTER */
+.footer-container,
+.footer-bottom {
+  padding-left: var(--desktop-padding) !important;
+  padding-right: var(--desktop-padding) !important;
+}
+
+/* WEBSITES FORCE SQUARES */
+.website-card-image {
+    width: 100% !important;
+    aspect-ratio: 1/1 !important;
+    height: auto !important;
+    overflow: hidden !important;
+}
+.website-card-image img {
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+}
+@media(max-width:1023px){
+    .websites-grid {
+        grid-auto-columns: clamp(250px,50vw,450px) !important;
+    }
+    .website-card-image {
+        aspect-ratio:1/1 !important;
+    }
+}
+
+
+
+
+/* =============================================================================
+   FONT IMPORTS
+============================================================================= */
+  
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@300;400;500;600;700&display=swap');
+
+
+/* =============================================================================
+   RESET & BASE STYLES
+============================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Cascadia Code', monospace;
+    background: #fff;
+    color: #000;
+    overflow-x: hidden;
+}
+
+:root {
+    --magenta: #FF00FF;
+    --yellow: #FFFF00;
+    --dark-green: #1a4d2e;
+    --light-gray: #f5f5f5;
+}
+
+/* =============================================================================
+   HIDDEN DESIGN ELEMENTS
+============================================================================= */
+.magenta-bar-left,
+.magenta-bar-horizontal,
+.magenta-bar-vertical-hero,
+.magenta-bar-vertical-section,
+.magenta-bar-vertical-left,
+.magenta-bar-vertical-right,
+.magenta-bar-vertical-footer,
+.magenta-bar-vertical-footer-right,
+.magenta-bar-top,
+.magenta-bar-bottom,
+.magenta-bar-center,
+.yellow-bar-full,
+.yellow-bar-left,
+.yellow-bar-right,
+.yellow-bar-center,
+.yellow-bar-center-2,
+.yellow-arrow-left,
+.yellow-arrow-right,
+.dimension,
+.dimension-label,
+.dimension-left,
+.dimension-left-2,
+.dimension-right,
+.magenta-label,
+.magenta-dimension {
+    display: none !important;
+}
+
+/* =============================================================================
+   NAVIGATION
+============================================================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6.25vw;
+    background: #fff;
+    z-index: 998;
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    background: #fff;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 5vw;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-image {
+    height: 1.6667vw;
+    width: auto;
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+.logo-text {
+    font-size: 0.9375vw;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #1a4d2e;
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9375vw;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #666;
+    transform: translateY(-2px);
+}
+
+/* =============================================================================
+   HERO SECTION
+============================================================================= */
+.hero-section {
+    margin-top: 2.5vw;
+    position: relative;
+    height: 50.10416667vw;
+    background: #f5f5f5;
+}
+
+.hero-content {
+    position: relative;
+    height: 100%;
+}
+
+.hero-image {
+    width: 100%;
+    height: 50.10416667vw;
+    object-fit: cover;
+    object-position: center -400px;
+    filter: brightness(0.6);
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+}
+
+.hero-text h1 {
+    font-size: 3.75vw;
+    font-weight: 400;
+    margin-bottom: 1.25vw;
+    font-family: 'Cascadia Code';
+    letter-spacing: 0;
+}
+
+.hero-subtitle {
+    line-height: 1.5;
+    font-weight: normal;
+    font-family: 'poppins', monospace;
+    font-weight: 350;
+    font-size: 1.09375vw;
+}
+
+
+/* Desktop-only horizontal parallax */
+@media (min-width: 1024px) {
+    .hero-content {
+        overflow: hidden; /* Only crop on desktop */
+    }
+    
+    .hero-image {
+        width: 105% !important; /* Only wider on desktop */
+        transform: translateX(-2.5%); /* Only offset on desktop */
+    }
+}
+
+/* Mobile stays completely unchanged - your existing mobile styles work as before */
+
+/* =============================================================================
+   ABOUT SECTION
+============================================================================= */
+.about-section {
+    position: relative;
+    padding-top: 3.75vw;
+    background: #fff;
+}
+
+.about-container {
+    max-width: 60vw;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-size: 1.516875vw;
+    font-weight: bold;
+    margin-bottom: 1.25vw;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #164427;
+}
+
+.about-content p {
+    font-size: 1.09375vw;
+    line-height: 1.666666667vw;
+    font-family: 'poppins', monospace;
+    font-weight: 350;
+    text-align: center;
+    margin-bottom: 2.5vw;
+}
+
+.read-more {
+    display: block;
+    text-decoration: underline;
+    color: #164427;
+    font-weight: 700;
+    font-size: 0.9375vw;
+    font-family: 'poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 6.25vw;
+}
+
+/* =============================================================================
+   SERVICES SECTION
+============================================================================= */
+.services-section {
+    position: relative;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.25vw;
+    padding-bottom: 12.5vw;
+    margin: 0;
+}
+
+.service-card {
+    position: relative;
+    width: calc(100% - 10vw);
+    height: 31.25vw;
+    overflow: hidden;
+    padding: 0 0 0 7.5vw;
+    display: flex;
+    align-items: center;
+}
+
+.image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.service-content {
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+}
+
+.service-content h3 {
+    font-size: 3.75vw;
+    font-weight: 400;
+    margin: 0 0 1.25vw 0;
+    font-family: 'cascadia code', monospace;
+    line-height: auto;
+}
+
+.service-content p {
+    line-height: 1.822916667vw;
+    margin: 0 0 2.5vw 0;
+    width: 43vw;
+    font-family: 'poppins', monospace;
+    font-weight: 350;
+    font-size: 1.09375vw;
+}
+
+.learn-more {
+    width: 20.52vw;
+    height: 3.75vw;
+    font-size: 0.9375vw;
+    font-weight: 700;
+    background: #fff;
+    color: #164427;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.learn-more:hover {
+    background: #164427;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* =============================================================================
+   PRO SECTION
+============================================================================= */
+.pro-section {
+    position: relative;
+    background: #fff;
+    text-align: center;
+}
+
+.pro-section .pro-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pro-content h2 {
+    font-size: 3.75vw;
+    font-weight: normal;
+    margin-bottom: 1.25vw;
+   font-family: 'poppins', monospace;
+    font-weight: normal;
+    color: #164427;
+}
+
+.pro-content p {
+    font-size: 1.09375vw;
+    line-height: 1.8;
+    font-weight: normal;
+    max-width: 37.23958333vw;
+    margin: 0 auto 48px;
+    font-family: 'poppins', monospace;
+    font-weight: 350;
+}
+
+.quotations-link {
+    display: inline-block;
+    text-decoration: underline;
+    color: #0D5434;
+    font-weight: 400;
+    font-size: 1.09375vw;
+    font-family: 'cascadia code', monospace;
+    margin-bottom: 12.5vw;
+}
+
+/* =============================================================================
+   MAIN GREEN SECTION
+============================================================================= */
+.greenbox-section {
+  width: 100vw;
+  height: 53.125vw;
+  background-color: #164427;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ===== GRID LAYOUT ===== */
+.greenbox-container {
+  display: grid;
+  grid-template-areas: "text image";
+  grid-template-columns: 43.75vw 43.75vw;
+  column-gap: 4vw;
+  align-items: center;
+  width: 100%;
+  padding: 0 5vw 0 0;
+  margin: 0;
+  box-sizing: border-box;
+  justify-content: flex-end;
+}
+
+/* ===== GRID AREA ASSIGNMENTS ===== */
+.greenbox-textbox {
+  grid-area: text;
+}
+
+.greenbox-imagebox {
+  grid-area: image;
+}
+
+/* ===== TEXT BLOCK ===== */
+.greenbox-textbox {
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  width: min(38vw, 100%);
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.greenbox-title {
+  font-size: 3.75vw;
+  margin: 0 0 2.5vw 0;
+  color: #fff;
+  font-family: "cascadia code", monospace;
+  font-weight: 400;
+}
+
+.greenbox-body {
+  font-size: 1.09375vw;
+  line-height: 1.7vw;
+  margin: 0 0 2.5vw 0;
+  color: #fff;
+  font-family: 'poppins', monospace;
+    font-weight: 350;
+}
+
+.greenbox-action {
+  font-size: 0.935vw;
+  text-decoration: underline;
+  font-family: "poppins", sans-serif;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ===== IMAGE BOX ===== */
+.greenbox-imagebox {
+  width: 43.75vw;
+  height: 31.25vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.greenbox-imagebox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =============================================================================
+   PORTFOLIO OVERVIEW SECTION
+============================================================================= */
+
+
+.portfolio-section {
+    position: relative;
+    background: #ffffff;
+}
+
+.portfolio-title {
+    font-size: 3.75vw;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 5vw 0;
+    margin: 0;
+}
+
+.portfolio-container {
+    display: flex;
+    justify-content: center;
+    gap: 2.5vw; /* 48px gap between columns */
+    padding-bottom: 3.75vw;
+    padding-left: 5vw; /* 96px left padding */
+    padding-right: 5vw; /* 96px right padding */
+    padding-top: 0;
+}
+
+.portfolio-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio-item {
+    width: 43.75vw; /* 840px - new square dimension */
+    height: 43.75vw; /* 840px - new square dimension */
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portfolio-text {
+    text-align: center;
+    padding: 3.75vw 0;
+}
+
+.portfolio-text h3 {
+    font-size: 1.25vw;
+    font-weight: bold;
+    font-family: 'cascadia code', sans-serif;
+    padding-bottom: 1.25vw;
+    margin: 0;
+}
+
+.portfolio-text p {
+    font-size: 1.09375vw;
+    line-height: 1.8;
+    max-width: 35.10417vw;
+    margin: 0 auto;
+    padding-bottom: 1.666666667vw;
+    font-family: 'poppins', monospace;
+    font-weight: 350;
+}
+
+.portfolio-learn-more {
+    display: inline-block;
+    text-decoration: underline;
+    color: #0D5434;
+    font-weight: 700;
+    font-size: 0.9375vw;
+    font-family: 'Poppins', sans-serif;
+    padding-bottom: 3.75vw;
+    transition: color 0.3s ease;
+}
+
+
+/* =============================================================================
+   ELEVATE SECTION
+============================================================================= */
+.elevate-section {
+    position: relative;
+    height: 37.5vw;
+    background: #f5f5f5;
+}
+
+.elevate-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.elevate-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+}
+
+.elevate-content h2 {
+    font-size: 3.75vw;
+    font-weight: normal;
+    margin-bottom: 1.25vw;
+    font-family: 'Cascadia Code';
+}
+
+.elevate-content p {
+    font-size: 1.09375vw;
+    line-height: 1.6;
+    margin-bottom: 2.5vw;
+    font-family: 'poppins', monospace;
+    font-weight: 350;
+}
+
+.cta-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 20.52vw;
+    height: 5vw;
+    background: transparent;
+    color: #fff;
+    border: 0.104vw solid #fff;
+    font-size: 0.9375vw;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background: #fff;
+    color: #164427;
+    transform: scale(1.05);
+}
+
+/* =============================================================================
+   FOOTER
+============================================================================= */
+.footer {
+    position: relative;
+    background: #F9F9F9;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: auto 1fr 5vw;
+    position: relative;
+}
+
+.footer-left {
+    padding: 3.75vw 18.75vw 0 5vw;
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1.25vw;
+}
+
+.footer-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12.5vw;
+    padding: 3.75vw 12.75vw 5vw 0;
+    align-items: start;
+}
+
+.footer-column h4 {
+    font-size: 0.9375vw;
+    font-weight: bold;
+    margin-bottom: 1.09375vw;
+    color: #5a5a5a;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 0.833vw;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9375vw;
+    font-family: 'Cascadia Code', monospace;
+    font-weight: 400;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-right {
+    width: 5vw;
+    position: relative;
+    background: transparent;
+}
+
+.social-icon {
+    width: 1.09375vw;
+    height: 1.09375vw;
+    margin: 0.625vw;
+}
+
+.footer-bottom {
+    background: #F9F9F9;
+    border-top: 0.104166667vw solid #8D8D8D;
+    min-height: 6.25vw;
+    display: flex;
+}
+
+.footer-bottom-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5vw;
+    font-family: 'Cascadia Code', monospace;
+    font-size: 0.9375vw;
+    font-weight: 400;
+    color: #000000;
+}
+
+.footer-logo a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo a:hover {
+    transform: scale(1.2);
+}
+
+/* =============================================================================
+   ANIMATIONS
+============================================================================= */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.fade-in,
+section.hero-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* =============================================================================
+   
+
+SERVICES PAGE ///// SERVICES PAGE ////// SERVICES PAGE ///// SERVICES PAGE 
+
+
+============================================================================= */
+
+
+
+
+/* =============================================================================
+   SERVICES PAGE HERO SECTION
+============================================================================= */
+.services-hero {
+    margin-top: 2.5vw;
+    position: relative;
+    height: 28.75vw;
+    width: 100%;
+    overflow: hidden;
+}
+
+.services-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.services-hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+}
+
+.services-hero-text h1 {
+    font-size: 3.75vw;
+    font-weight: 350;
+    font-family: 'cascadia code', sans-serif;
+    margin: 0;
+}
+
+/* =============================================================================
+   EXPLAINER SECTION
+============================================================================= */
+
+.explainer-section {
+    position: relative;
+    padding-top: 2.5vw;
+    padding-bottom: 6.25vw;
+    background: #fff;
+}
+
+.explainer-container {
+    max-width: 60vw;
+    margin: 0 auto;
+}
+
+.explainer-content p {
+    font-size: 1.09375vw;
+    line-height: 1.666666667vw;
+    font-family: 'poppins', monospace;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 2.5vw;
+}
+
+
+
+
+
+/* =============================================
+KAZI SECTION 
+============================================= */
+
+.kazi-section {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* ===== Vertical spacing between each Kazi section ===== */
+.kazi-section {
+    width: 100%;
+    margin-bottom: 6.25vw;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/* ===== GRID LAYOUT ===== */
+.kazi-container {
+    display: grid;
+    column-gap: 2.5vw; /* 48px gap between columns */
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ===== IMAGE RIGHT (text left) ===== */
+.kazi-section.right .kazi-container {
+    grid-template-areas: "text image";
+    grid-template-columns: 43.75vw 43.75vw; /* 840px each */
+    padding: 0 5vw 0 5vw; /* 96px on both sides */
+    justify-content: space-between;
+}
+
+/* ===== IMAGE LEFT (text right) ===== */
+.kazi-section.left .kazi-container {
+    grid-template-areas: "image text";
+    grid-template-columns: 43.75vw 43.75vw; /* 840px each */
+    padding: 0 5vw 0 5vw; /* 96px on both sides */
+    justify-content: space-between;
+}
+
+/* ===== GRID AREA ASSIGNMENTS ===== */
+.kazi-image-box { 
+    grid-area: image;
+}
+
+.kazi-text { 
+    grid-area: text;
+}
+
+/* ===== IMAGE BOX ===== */
+.kazi-image-box {
+    width: 43.75vw; /* 840px - square dimension */
+    height: 43.75vw; /* 840px - square dimension */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.kazi-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== TEXT BLOCK POSITIONING ===== */
+.kazi-text {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    width: min(38vw, 100%);
+    padding: 0;
+    margin: 0;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.kazi-text h2 {
+    font-size: 3.75vw;
+    margin: 0 0 2.5vw 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.kazi-text p {
+    font-size: 1.09375vw;
+    line-height: 1.7vw;
+    margin: 0 0 2.5vw 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+
+/* =========================================
+   DIGITAL SECTION
+========================================= */
+
+.digital-section {
+    width: 100%;
+    padding-top: 1.25vw;
+    padding-bottom: 2.5vw;
+    box-sizing: border-box;
+}
+
+/* ---- IMAGE ROW ----- */
+.digital-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5vw; /* 48px space BETWEEN the two image containers */
+    padding-left: 5vw;  /* 96px required left padding */
+    padding-right: 5vw; /* 96px required right padding */
+    box-sizing: border-box;
+}
+
+/* ---- LEFT SQUARE IMAGE ---- */
+.digital-img-square {
+    width: 27.70833vw;
+    height: 27.70833vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.digital-img-square img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---- RIGHT WIDE IMAGE ---- */
+.digital-img-wide {
+    width: 59.79167vw;
+    height: 27.70833vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.digital-img-wide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---- CENTERED TEXT BELOW IMAGES ---- */
+.digital-text {
+    width: 61.30208vw;      /* fixed width you asked for */
+    margin: 2vw auto 0 auto; /* centers it horizontally */
+    text-align: center;
+    font-size: 1.09375vw;
+    line-height: 1.7vw;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    padding-bottom: 6.25vw;
+}
+
+
+/* ----------------------------------------------------
+ABOUT US SECTION
+
+ --------------------------------------------------- */
+/* Reset body spacing that was breaking the layout */
+/* Reset body spacing that was breaking the layout */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* SECTION — force no padding or margins from parents */
+.aboutus-section {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* MAIN CONTAINER */
+.aboutus-container {
+    display: flex;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Remove all hidden spacing */
+.aboutus-container, 
+.aboutus-item,
+.aboutus-img-box,
+.aboutus-img-box img {
+    margin: 0;
+    padding: 0;
+}
+
+/* EACH ITEM (fixed width) */
+.aboutus-item {
+    width: 27.70833333vw;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* LEFT IMAGE — EXACT 5VW */
+.aboutus-item.first {
+    margin-left: 5vw;
+}
+
+/* MIDDLE IMAGE — EVEN GAP ON BOTH SIDES */
+.aboutus-item.middle {
+    margin-left: 3.4375vw;
+    margin-right: 3.4375vw;
+}
+
+/* RIGHT IMAGE — EXACT 5VW */
+.aboutus-item.last {
+    margin-right: 5vw;
+}
+
+/* PERFECT SQUARE IMAGE BOX */
+.aboutus-img-box {
+    width: 27.70833333vw;
+    height: 27.70833333vw;
+    overflow: hidden;
+}
+
+.aboutus-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* TEXT BELOW IMAGE */
+.aboutus-text {
+    padding-top: 1.875vw;
+    padding-bottom: 2.5vw;
+    font-size: 1.09375vw;
+    font-family: "cascadia code", sans-serif;
+    font-weight: bold;
+    line-height: 1.7vw;
+    margin: 0;
+}
+
+/* UNDERLINED "LEARN MORE" LINK */
+.aboutus-action {
+    font-size: 0.935vw;
+    text-decoration: underline;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    color: #164427;
+    font-weight: bold;
+    padding-top: 0vw;
+}
+
+
+/* --------------------------------------------
+DEADLINE SECTION
+-------------------------------------------- */
+
+.deadline-section {
+    position: relative;
+    background: #fff;
+    text-align: center;
+padding-top: 12.5vw;
+padding-bottom: 6.25vw;
+}
+
+.deadline-section .deadline-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.deadline-content h2 {
+    font-size: 3.75vw;
+    font-weight: normal;
+    margin-bottom: 1.25vw;
+    font-family: 'Poppins', sans-serif;
+}
+
+.deadline-content p {
+    font-size: 1.09375vw;
+    line-height: 1.8;
+    font-family: 'Poppins', monospace;
+    font-weight: 350;
+    max-width: 37.23958333vw;
+    margin: 0 auto;
+    padding-bottom: 2.5vw;
+}
+
+.quotations-link {
+    display: inline-block;
+    text-decoration: underline;
+    color: #164427;
+    font-weight: 700;
+    font-size: 0.9375vw;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+
+
+
+/* =============================================================================
+   
+
+QUOTATIONS PAGE ///// QUOTATIONS PAGE ///// QUOTATIONS PAGE ///// QUOTATIONS PAGE ///// 
+
+
+============================================================================= */
+
+
+.quote-section {
+    position: relative;
+    height: 28.75vw;
+    width: 100%;
+    overflow: hidden;
+}
+
+.quote-section-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.quote-section-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+}
+
+.quote-section-text h1 {
+    font-size: 3.75vw;
+    font-weight: 350;
+    font-family: 'cascadia code', sans-serif;
+    margin: 0;
+}
+
+
+
+
+
+/* =============================================================================
+  WEBSITE SITE SECTION
+============================================================================= */
+
+   .websites {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+        }
+
+        /* Hide scrollbar completely */
+        .websites::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for Firefox */
+        .websites {
+            scrollbar-width: none;
+            font-family: "poppins";
+        }
+
+        .websites-grid {
+            display: flex;
+            gap: 2.5vw; /* 48px gap between images */
+            padding-left: 6.25vw; /* 120px left padding */
+            padding-right: 6.25vw; /* Right padding for symmetry */
+            padding-bottom: 6.25vw;
+            width: fit-content;
+        }
+
+        .website-card {
+            width: 38.23vw; /* 734px */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .website-card-image {
+            width: 38.23vw; /* 734px */
+            height: 38.23vw; /* 734px */
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2.5vw; 
+        }
+
+        .website-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.5);
+        }
+
+        .website-card-overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.25vw; /* 24px */
+            max-width: 29.32vw; /* 563px */
+            text-align: center;
+            z-index: 10;
+            line-height: 1.4;
+        }
+
+        .website-card-title {
+            font-size: 1.25vw;
+            text-align: center;
+            margin-bottom: 1.25vw; 
+            font-weight: bold;
+            color: #164427;
+            max-width: 33.125vw;
+        }
+
+        .website-card-body {
+            font-size: 1.09vw; /* 21px */
+            text-align: center;
+            margin-bottom: 2.5vw; 
+            color: #000000;
+            line-height: 1.6;
+            max-width: 33.125vw;
+            font-weight: normal;
+        }
+
+     .website-card-body-small {
+    font-size: 0.94vw; /* 18px */
+    text-align: center;
+    color: #000000;
+    line-height: 1.6;
+    font-weight: normal;
+    max-width: 33.125vw;
+}
+
+.website-card-body-small .price {
+    font-size: 1.09vw; /* 21px */
+    font-weight: bold;
+}
+
+
+/* =============================================================================
+ .consultancy-section 
+============================================================================= */
+
+  /* ===== CONSULTANCY SECTION ===== */
+        .consultancy-section {
+            height: auto; /* 1748px / 1920px * 100 */
+            display: flex;
+            gap: 2.5vw; /* 48px gap between columns */
+            position: relative;
+            padding-top: 0vw;
+            padding-bottom:0vw;
+        }
+
+        .left-column {
+            flex: 1;
+        }
+
+        .right-column {
+            flex: 1;
+        }
+        .title-left {
+            font-size: 3.75vw; /* 72px / 1920px * 100 */
+            font-weight: 400;
+            padding-top: 3.75vw; /* 72px / 1920px * 100 */
+            padding-bottom: 3.75vw;
+            padding-left: 5vw; /* 96px / 1920px * 100 */
+        }
+
+        .consultancy-image-left {
+            padding-left: 5vw; /* 96px / 1920px * 100 */
+        }
+
+        .consultancy-image-left img {
+            width: 43.75vw; /* 840px / 1920px * 100 */
+            height: 43.75vw;
+            object-fit: cover;
+            display: block;
+        }
+
+        .text-box {
+            font-size: 1.09375vw; /* 28px / 1920px * 100 */
+            padding-left: 5vw; /* 96px / 1920px * 100 */
+            padding-top: 2.5vw; 
+            padding-bottom: 2.5vw;
+            font-weight: 350; 
+        }
+
+        .list-container {
+            padding-left: 5vw; /* 96px / 1920px * 100 */
+        }
+
+        .list-container ul {
+            list-style: none;
+            font-size: 0.94vw; /* 18px / 1920px * 100 */
+            font-weight: 400;
+        }
+
+        .list-container ul li {
+            margin-bottom: 0.5vw;
+        }
+
+        .list-title {
+            font-weight: 700;
+            margin-bottom: 1vw;
+        }
+
+        .title-right {
+            font-size: 3.75vw;
+            max-width: 27.8125vw;
+            font-weight: 400;
+            padding-top: 11.3vw; /* 217px / 1920px * 100 */
+            padding-bottom: 3.75vw;
+            padding-left: 0; /* No left padding needed due to gap */
+        }
+
+        .consultancy-image-right {
+            padding-right: 5vw; /* 96px / 1920px * 100 */
+        }
+
+        .consultancy-image-right img {
+            width: 43.75vw; /* 840px / 1920px * 100 */
+            height: 43.75vw;
+            object-fit: cover;
+            display: block;
+        }
+
+/* =========================================================
+PACKAGING SECTION 
+=============================================== */
+
+
+/* ===== PACKAGING SECTION ===== */
+.packaging-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal split with gap */
+    grid-template-rows: 29.947917vw 29.947917vw 29.947917vw 31.25vw; /* 575px, 575px, 575px, 600px */
+    column-gap: 2.5vw; /* Gap in the middle */
+    box-sizing: border-box;
+}
+
+/* ===== TOP LEFT - MAIN TEXT BOX ===== */
+.text-box-main {
+    grid-column: 1;
+    grid-row: 1;
+    padding-left: 5vw; /* 96px */
+    padding-bottom: 2.5vw; /* 48px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.main-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 3.75vw; /* 72px */
+    text-align: center;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* ===== TOP RIGHT - MAIN IMAGE (SPANS 2 ROWS) ===== */
+.image-container-right {
+    grid-column: 2;
+    grid-row: 1 / 3; /* Spans rows 1 and 2 */
+    padding-right: 5vw; /* 96px */
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.image-container-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== MIDDLE LEFT - IMAGE 2 ===== */
+.image-container-left-top {
+    grid-column: 1;
+    grid-row: 2;
+    padding-left: 5vw; /* 96px */
+    padding-bottom: 2.5vw; /* 48px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.image-container-left-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== BOTTOM LEFT - IMAGE 3 ===== */
+.image-container-left-bottom {
+    grid-column: 1;
+    grid-row: 3;
+    padding-left: 5vw; /* 96px */
+    padding-bottom: 2.5vw; /* 48px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.image-container-left-bottom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== BOTTOM RIGHT - SECONDARY TEXT BOX ===== */
+.text-box-secondary {
+    grid-column: 2;
+    grid-row: 3;
+    padding-right: 5vw; /* 96px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.secondary-text {
+    font-family: 'poppins', sans-serif;
+    font-weight: 350;
+    font-size: 1.09375vw; /* ~24px for readability */
+    line-height: 1.6;
+    max-width: 29.479167vw; /* 566px */
+    text-align: center;
+    margin: 0;
+}
+
+/* ===== FULL WIDTH IMAGE AT BOTTOM ===== */
+.image-container-full {
+    grid-column: 1 / 3; /* Spans both columns */
+    grid-row: 4;
+    height: 31.25vw; /* 600px */
+    padding-left: 5vw;
+    padding-right: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.image-container-full img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+/* -----------------------------------------------------------
+Title Section
+ ----------------------------------------------------------------*/
+        .title-section {
+            width: 100%;
+            padding-left: 9.375vw; 
+            padding-bottom: 2.5vw; /* 120px bottom padding */
+        }
+
+        .title-section h1 {
+            font-size: 3.75vw; /* 72px */
+            font-weight: normal;
+            color: #000000;
+            margin: 6.25;
+            padding-bottom: 0vw; /* 120px bottom padding */
+            text-align: left;
+            font-family: "poppins";
+        }
+
+
+
+/* =========================================================
+POWERPOINT VIDEO 
+================================================ */
+
+.powerpoint-video {
+    width: 100vw;
+    background: #F9F9F9; /* green removed */
+    display: flex;
+    justify-content: center; /* centers horizontally */
+    align-items: flex-start; /* sticks to the top */
+    padding-top: 0; /* optional, remove any spacing */
+    padding-bottom:6.25vw;
+}
+
+.video-wrapper {
+    width: 75vw;
+    aspect-ratio: 16/9;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0.6vw;
+}
+
+
+
+
+/* =============================================================================
+wide-image-section
+============================================================================= */
+
+        .wide-image-section {
+            width: 100%;
+            padding-left: 6.25vw;
+            padding-right: 6.25vw;
+            padding-bottom: 2.5vw;
+            padding-top: 0vw; /* 120px converted to vw */
+        }
+
+        .image-container {
+            width: 100%;
+            height: 43.75vw; /* 600px converted to vw */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 0vw; /* 20px for rounded corners */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Placeholder styling if no image is used */
+        .image-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2vw;
+            font-weight: bold;
+            text-align: center;
+        }
+
+
+
+
+
+
+        /* -------------------------------------------------------
+        Contacts Section 
+        -------------------------------------------------*/
+        .contacts-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3.125vw 0; /* 60px top and bottom */
+
+
+
+            
+        }
+
+        .contacts-icon {
+            width: 1.666666667vw; /* 48px */
+            height: auto; /* 48px */
+            margin-bottom: 1.25vw; /* 24px */
+        }
+
+        .contacts-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #333; /* Icon border/stroke color */
+            stroke-width: 2; /* Adjust this to change border thickness */
+            fill: none; /* No fill, only outline */
+        }
+
+        .contacts-heading {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.25vw; /* 24px */
+            padding-bottom: 0.625vw; /* 12px */
+            color: #333;
+        }
+
+        .contacts-body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 1.09375vw; /* 21px */
+            padding-bottom: 1.09375vw; /* 21px */
+            color: #666;
+        }
+
+        .contacts-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.9375vw;
+    padding-bottom: 1.09375vw;
+    color: #333;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+    
+
+        .contacts-link:hover {
+    color: #164427;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+
+
+   /* Last contact section link gets larger bottom padding */
+        .contacts-section:last-of-type .contacts-link {
+            padding-bottom: 12.5vw;
+        }
+
+/* =============================================================================
+   ANIMATIONS
+============================================================================= */
+section {
+    opacity: 100;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.fade-in,
+section.hero-section,
+section.services-hero {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =============================================================================
+   side-scroll
+============================================================================= */
+
+
+ .side-scroll {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Hide scrollbar completely */
+        .side-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for Firefox */
+        .side-scroll {
+            scrollbar-width: none;
+        }
+
+        .scroll-container {
+            display: flex;
+            gap: 2.5vw; /* 48px gap between containers */
+            padding-left: 6.25vw; /* 120px left padding */
+            padding-right: 6.25vw; /* Right padding for symmetry */
+            padding-top: 0vw;
+            padding-bottom: 2.5vw;
+            width: fit-content;
+        }
+
+        .container {
+            width: 23.90625vw;
+            height: 53.125vw; 
+            flex-shrink: 0;
+            overflow: hidden;
+            box-shadow: 0 0.52vw 1.04vw rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .container:hover {
+            transform: translateY(-0.52vw);
+        }
+
+
+
+
+/* =============================================================================
+   smooth scroll
+============================================================================= */
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem; /* Prevents content from hiding under fixed headers */
+}
+
+/* Custom smooth scrollbar (for webkit browsers) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+
+
+
+
+@media (max-width: 1023px) {
+/* =============================================================================
+   PERFECT MATHEMATICAL SCALING SYSTEM
+   Scales from 412px (mobile) to 1920px (desktop) using your exact formula
+   Add this at the VERY END of your existing styles.css
+============================================================================= */
+
+/* =============================================================================
+   FLUID FONT SIZES - Automatically scales between 412px and 1920px
+   Based on your scaling formula: larger fonts shrink more, smaller stay readable
+============================================================================= */
+
+:root {
+    /* Hero & Display Text: 72px → 34px */
+    --text-hero: clamp(34px, 2.5vw + 23.7px, 72px);
+    
+    /* Large Headings: 48px → 26px */
+    --text-xl: clamp(26px, 1.46vw + 20px, 48px);
+    
+    /* Medium Headings: 32px → 20px */
+    --text-lg: clamp(20px, 0.8vw + 16.7px, 32px);
+    
+    /* Small Headings: 24px → 17px */
+    --text-md: clamp(17px, 0.46vw + 15.1px, 24px);
+    
+    /* Body Text: 21px → 15px */
+    --text-base: clamp(17px, 0.4vw + 13.3px, 21px);
+    
+    /* Small Body: 18px → 13px */
+    --text-sm: clamp(15px, 0.33vw + 11.6px, 18px);
+    
+    /* Tiny Text: 16px → 12px */
+    --text-xs: clamp(12px, 0.27vw + 10.9px, 16px);
+    
+    /* Navigation: 14px → 11px */
+    --text-nav: clamp(11px, 0.2vw + 10.2px, 14px);
+    
+    /* Spacing system that scales proportionally */
+    --space-xs: clamp(8px, 0.8vw, 20px);
+    --space-sm: clamp(12px, 1.3vw, 32px);
+    --space-md: clamp(20px, 2vw, 48px);
+    --space-lg: clamp(32px, 3.3vw, 80px);
+    --space-xl: clamp(48px, 5vw, 120px);
+    
+    /* Container widths */
+    --container-padding: clamp(16px, 3.5vw, 96px);
+}
+
+/* =============================================================================
+   NAVIGATION - FLUID SCALING
+============================================================================= */
+.navbar {
+    height: clamp(60px, 5.2vw, 100px);
+}
+
+.nav-container {
+    padding: 0 var(--container-padding);
+    gap: clamp(12px, 2vw, 48px);
+}
+
+.logo-image {
+    height: clamp(24px, 1.7vw, 32px);
+}
+
+.logo-text {
+    font-size: var(--text-nav);
+    letter-spacing: clamp(0.3px, 0.03vw, 0.5px);
+}
+
+.nav-link {
+    font-size: var(--text-nav);
+}
+
+/* Stack navigation on small screens */
+@media (max-width: 520px) {
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-center {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: clamp(8px, 2vw, 16px);
+    }
+}
+
+/* =============================================================================
+   HERO SECTION - FLUID SCALING
+============================================================================= */
+.hero-section {
+    margin-top: clamp(60px, 5.2vw, 100px);
+    height: clamp(400px, 52vw, 962px);
+}
+
+.hero-image {
+    height: 100%;
+    object-position: center;
+}
+
+.hero-text h1 {
+    font-size: var(--text-hero);
+    margin-bottom: clamp(12px, 1.3vw, 24px);
+}
+
+.hero-subtitle {
+    font-size: var(--text-base);
+    line-height: 1.5;
+}
+
+/* =============================================================================
+   ABOUT SECTION - FLUID SCALING
+============================================================================= */
+.about-section {
+    padding-top: clamp(36px, 3.9vw, 72px);
+}
+
+.about-container {
+    max-width: clamp(370px, 62.5vw, 1152px);
+    padding: 0 var(--container-padding);
+}
+
+.about-content h2 {
+    font-size: clamp(22px, 1.6vw, 29px);
+    margin-bottom: var(--space-sm);
+}
+
+.about-content p {
+    font-size: var(--text-base);
+    line-height: clamp(22px, 1.7vw, 32px);
+    margin-bottom: var(--space-md);
+}
+
+.read-more {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-xl);
+}
+
+/* =============================================================================
+   SERVICES SECTION - FLUID SCALING
+============================================================================= */
+.services-section {
+    gap: clamp(20px, 2.3vw, 43px);
+    padding-bottom: var(--space-xl);
+}
+
+.service-card {
+    width: calc(100% - clamp(32px, 10.4vw, 192px));
+    height: clamp(350px, 32.6vw, 600px);
+    padding: 0 0 0 var(--container-padding);
+}
+
+.service-content h3 {
+    font-size: var(--text-hero);
+    margin: 0 0 var(--space-sm) 0;
+    line-height: 1.2;
+}
+
+.service-content p {
+    font-size: var(--text-base);
+    line-height: clamp(24px, 1.9vw, 35px);
+    margin: 0 0 var(--space-md) 0;
+    width: clamp(370px, 44.8vw, 826px);
+}
+
+.learn-more {
+    width: clamp(180px, 21.4vw, 394px);
+    height: clamp(48px, 3.9vw, 72px);
+    font-size: var(--text-sm);
+}
+
+/* =============================================================================
+   PRO / DEADLINE SECTION - FLUID SCALING
+============================================================================= */
+.pro-section,
+.deadline-section {
+    padding: var(--space-lg) var(--container-padding);
+}
+
+.pro-content h2,
+.deadline-content h2 {
+    font-size: var(--text-hero);
+    margin-bottom: var(--space-sm);
+}
+
+.pro-content p,
+.deadline-content p {
+    font-size: var(--text-base);
+    line-height: 1.8;
+    max-width: clamp(370px, 38.9vw, 715px);
+    margin: 0 auto var(--space-md);
+}
+
+.quotations-link {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-xl);
+}
+
+/* =============================================================================
+   GREEN BOX SECTION - FLUID SCALING WITH RESPONSIVE LAYOUT
+============================================================================= */
+.greenbox-section {
+    width: 100vw;
+    min-height: clamp(500px, 55.5vw, 1020px);
+    padding: var(--space-lg) 0;
+}
+
+.greenbox-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
+    column-gap: clamp(20px, 4.2vw, 77px);
+    align-items: center;
+    padding: 0 var(--container-padding);
+}
+
+.greenbox-textbox {
+    width: 100%;
+    max-width: clamp(370px, 39.6vw, 730px);
+    justify-self: center;
+}
+
+.greenbox-title {
+    font-size: var(--text-hero);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.greenbox-body {
+    font-size: var(--text-base);
+    line-height: clamp(24px, 1.8vw, 33px);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.greenbox-action {
+    font-size: var(--text-sm);
+}
+
+.greenbox-imagebox {
+    width: 100%;
+    max-width: clamp(370px, 45.6vw, 840px);
+    height: clamp(300px, 32.6vw, 600px);
+    justify-self: center;
+}
+
+/* =============================================================================
+   PORTFOLIO SECTION - FLUID SCALING
+============================================================================= */
+.portfolio-section {
+    padding: var(--space-lg) var(--container-padding);
+}
+
+.portfolio-title {
+    font-size: var(--text-hero);
+    padding: var(--space-lg) 0;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
+    gap: clamp(24px, 2.6vw, 48px);
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    padding-bottom: clamp(36px, 3.9vw, 72px);
+}
+
+.portfolio-column {
+    width: 100%;
+}
+
+.portfolio-item {
+    width: 100%;
+    max-width: clamp(370px, 45.6vw, 840px);
+    aspect-ratio: 1;
+    margin: 0 auto;
+}
+
+.portfolio-text {
+    text-align: center;
+    padding: clamp(36px, 3.9vw, 72px) 0;
+}
+
+.portfolio-text h3 {
+    font-size: var(--text-md);
+    padding-bottom: var(--space-sm);
+}
+
+.portfolio-text p {
+    font-size: var(--text-base);
+    line-height: 1.8;
+    max-width: clamp(350px, 36.6vw, 674px);
+    margin: 0 auto;
+    padding-bottom: clamp(20px, 1.7vw, 32px);
+}
+
+.portfolio-learn-more {
+    font-size: var(--text-sm);
+    padding-bottom: clamp(36px, 3.9vw, 72px);
+}
+
+/* =============================================================================
+   ELEVATE SECTION - FLUID SCALING
+============================================================================= */
+.elevate-section {
+    height: clamp(400px, 39vw, 720px);
+}
+
+.elevate-content h2 {
+    font-size: var(--text-hero);
+    margin-bottom: var(--space-sm);
+}
+
+.elevate-content p {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.cta-button {
+    width: clamp(180px, 21.4vw, 394px);
+    height: clamp(52px, 5.2vw, 96px);
+    font-size: var(--text-sm);
+    border-width: clamp(1.5px, 0.1vw, 2px);
+}
+
+/* =============================================================================
+   KAZI SECTION - FLUID SCALING WITH RESPONSIVE LAYOUT
+============================================================================= */
+.kazi-section {
+    margin-bottom: clamp(48px, 6.5vw, 120px);
+}
+
+.kazi-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
+    column-gap: clamp(24px, 2.6vw, 48px);
+    align-items: center;
+    padding: 0 var(--container-padding);
+}
+
+.kazi-image-box {
+    width: 100%;
+    max-width: clamp(370px, 45.6vw, 840px);
+    aspect-ratio: 1;
+    justify-self: center;
+}
+
+.kazi-text {
+    width: 100%;
+    max-width: clamp(350px, 39.6vw, 730px);
+    justify-self: center;
+}
+
+.kazi-text h2 {
+    font-size: var(--text-hero);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.kazi-text p {
+    font-size: var(--text-base);
+    line-height: clamp(24px, 1.8vw, 33px);
+    margin: 0 0 var(--space-md) 0;
+}
+
+/* =============================================================================
+   DIGITAL SECTION - FLUID SCALING
+============================================================================= */
+.digital-section {
+    padding-top: clamp(12px, 1.3vw, 24px);
+    padding-bottom: clamp(24px, 2.6vw, 48px);
+}
+
+.digital-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    gap: clamp(24px, 2.6vw, 48px);
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+.digital-img-square {
+    width: 100%;
+    max-width: clamp(300px, 28.9vw, 532px);
+    height: clamp(300px, 28.9vw, 532px);
+}
+
+.digital-img-wide {
+    width: 100%;
+    max-width: clamp(370px, 62.4vw, 1148px);
+    height: clamp(300px, 28.9vw, 532px);
+}
+
+.digital-text {
+    width: 100%;
+    max-width: clamp(370px, 64vw, 1177px);
+    margin: clamp(20px, 2.1vw, 38px) auto 0 auto;
+    text-align: center;
+    font-size: var(--text-base);
+    line-height: clamp(24px, 1.8vw, 33px);
+    padding-bottom: clamp(48px, 6.5vw, 120px);
+}
+
+/* =============================================================================
+   ABOUT US SECTION - FLUID SCALING
+============================================================================= */
+.aboutus-section {
+    padding: var(--space-lg) 0;
+}
+
+.aboutus-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    gap: clamp(28px, 3.6vw, 66px);
+    padding: 0 var(--container-padding);
+}
+
+.aboutus-item {
+    width: 100%;
+    margin: 0;
+}
+
+.aboutus-img-box {
+    width: 100%;
+    max-width: clamp(300px, 28.9vw, 532px);
+    aspect-ratio: 1;
+    margin: 0 auto;
+}
+
+.aboutus-text {
+    padding-top: clamp(18px, 2vw, 36px);
+    padding-bottom: clamp(24px, 2.6vw, 48px);
+    font-size: var(--text-base);
+    line-height: clamp(24px, 1.8vw, 33px);
+}
+
+.aboutus-action {
+    font-size: var(--text-sm);
+}
+
+/* =============================================================================
+   CONSULTANCY SECTION - FLUID SCALING
+============================================================================= */
+.consultancy-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
+    gap: clamp(24px, 2.6vw, 48px);
+    padding: var(--space-lg) 0;
+}
+
+.title-left,
+.title-right {
+    font-size: var(--text-hero);
+    padding: clamp(36px, 3.9vw, 72px) var(--container-padding);
+    max-width: clamp(300px, 29vw, 534px);
+}
+
+.consultancy-image-left,
+.consultancy-image-right {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+.consultancy-image-left img,
+.consultancy-image-right img {
+    width: 100%;
+    max-width: clamp(370px, 45.6vw, 840px);
+    aspect-ratio: 1;
+}
+
+.text-box {
+    font-size: var(--text-base);
+    padding: clamp(24px, 2.6vw, 48px) var(--container-padding);
+}
+
+.list-container {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+.list-container ul {
+    font-size: var(--text-sm);
+}
+
+.list-container ul li {
+    margin-bottom: clamp(6px, 0.5vw, 10px);
+}
+
+/* =============================================================================
+   PACKAGING SECTION - FLUID SCALING
+============================================================================= */
+.packaging-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    gap: clamp(24px, 2.6vw, 48px);
+    padding: var(--space-lg) var(--container-padding);
+}
+
+.text-box-main,
+.text-box-secondary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-md);
+}
+
+.main-heading {
+    font-size: var(--text-hero);
+}
+
+.secondary-text {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    max-width: clamp(320px, 30.7vw, 566px);
+}
+
+.image-container-right,
+.image-container-left-top,
+.image-container-left-bottom,
+.image-container-full {
+    overflow: hidden;
+}
+
+.image-container-full {
+    grid-column: 1 / -1;
+    height: clamp(300px, 32.6vw, 600px);
+}
+
+/* =============================================================================
+   WEBSITE CARDS - FLUID HORIZONTAL SCROLL
+============================================================================= */
+.websites {
+    padding: var(--space-md) 0;
+}
+
+.websites-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: clamp(350px, 39.9vw, 734px);
+    gap: clamp(24px, 2.6vw, 48px);
+    padding: 0 clamp(48px, 6.5vw, 120px) clamp(48px, 6.5vw, 120px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.website-card {
+    scroll-snap-align: start;
+    width: 100%;
+}
+
+.website-card-image {
+    width: 100%;
+    aspect-ratio: 1;
+    margin-bottom: clamp(24px, 2.6vw, 48px);
+}
+
+.website-card-overlay-text {
+    font-size: clamp(14px, 1.3vw, 24px);
+    max-width: clamp(280px, 30.6vw, 563px);
+}
+
+.website-card-title {
+    font-size: var(--text-md);
+    max-width: clamp(320px, 34.6vw, 636px);
+    margin-bottom: var(--space-sm);
+}
+
+.website-card-body {
+    font-size: var(--text-base);
+    max-width: clamp(320px, 34.6vw, 636px);
+    line-height: 1.6;
+    margin-bottom: clamp(24px, 2.6vw, 48px);
+}
+
+.website-card-body-small {
+    font-size: var(--text-sm);
+    max-width: clamp(320px, 34.6vw, 636px);
+}
+
+.website-card-body-small .price {
+    font-size: var(--text-base);
+}
+
+/* =============================================================================
+   TITLE SECTION - FLUID SCALING
+============================================================================= */
+.title-section {
+    padding: clamp(48px, 6.5vw, 120px) clamp(36px, 9.8vw, 180px) clamp(24px, 2.6vw, 48px);
+}
+
+.title-section h1 {
+    font-size: var(--text-hero);
+}
+
+/* =============================================================================
+   SIDE SCROLL - FLUID SCALING
+============================================================================= */
+.side-scroll {
+    padding: var(--space-md) 0;
+}
+
+.scroll-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: clamp(200px, 24.9vw, 459px);
+    gap: clamp(24px, 2.6vw, 48px);
+    padding: 0 clamp(48px, 6.5vw, 120px) clamp(24px, 2.6vw, 48px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.container {
+    aspect-ratio: 9 / 16;
+    height: clamp(450px, 55.5vw, 1020px);
+    scroll-snap-align: start;
+}
+
+/* =============================================================================
+   POWERPOINT VIDEO - FLUID SCALING
+============================================================================= */
+.powerpoint-video {
+    padding: var(--space-lg) var(--container-padding) clamp(48px, 6.5vw, 120px);
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: clamp(370px, 78.1vw, 1440px);
+}
+
+/* =============================================================================
+   CONTACTS SECTION - FLUID SCALING
+============================================================================= */
+.contacts-section {
+    padding: clamp(30px, 3.3vw, 60px) var(--container-padding);
+}
+
+.contacts-icon {
+    width: clamp(24px, 1.7vw, 32px);
+    height: auto;
+    margin-bottom: var(--space-sm);
+}
+
+.contacts-heading {
+    font-size: var(--text-md);
+    padding-bottom: clamp(8px, 0.65vw, 12px);
+}
+
+.contacts-body {
+    font-size: var(--text-base);
+    padding-bottom: clamp(12px, 1.14vw, 21px);
+}
+
+.contacts-link {
+    font-size: var(--text-sm);
+    padding-bottom: clamp(12px, 1.14vw, 21px);
+}
+
+.contacts-section:last-of-type .contacts-link {
+    padding-bottom: clamp(96px, 13vw, 240px);
+}
+
+/* =============================================================================
+   FOOTER - FLUID SCALING
+============================================================================= */
+.footer {
+    padding: var(--space-lg) 0 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: auto 1fr clamp(40px, 5.2vw, 96px);
+    padding: 0;
+}
+
+.footer-left {
+    padding: clamp(36px, 3.9vw, 72px) clamp(144px, 19.5vw, 360px) 0 var(--container-padding);
+}
+
+.footer-center {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: clamp(96px, 13vw, 240px);
+    padding: clamp(36px, 3.9vw, 72px) clamp(98px, 13.3vw, 245px) clamp(48px, 5.2vw, 96px) 0;
+}
+
+.footer-column h4 {
+    font-size: var(--text-sm);
+    margin-bottom: clamp(12px, 1.14vw, 21px);
+}
+
+.footer-column a {
+    font-size: var(--text-sm);
+}
+
+.footer-column li {
+    margin-bottom: clamp(10px, 0.87vw, 16px);
+}
+
+.social-icon {
+    width: var(--text-base);
+    height: var(--text-base);
+    margin: clamp(6px, 0.65vw, 12px);
+}
+
+.footer-logo a:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    border-top: clamp(1.5px, 0.1vw, 2px) solid #8D8D8D;
+    min-height: clamp(60px, 6.5vw, 120px);
+}
+
+.footer-bottom-content {
+    padding-left: var(--container-padding);
+    font-size: var(--text-sm);
+}
+
+/* =============================================================================
+   SERVICES/ABOUT HERO - FLUID SCALING
+============================================================================= */
+.services-hero,
+.quote-section {
+    margin-top: clamp(60px, 5.2vw, 100px);
+    height: clamp(300px, 30vw, 552px);
+}
+
+.services-hero-text h1,
+.quote-section-text h1 {
+    font-size: var(--text-hero);
+}
+
+/* =============================================================================
+   EXPLAINER SECTION - FLUID SCALING
+============================================================================= */
+.explainer-section {
+    padding-top: clamp(12px, 1.3vw, 24px);
+    padding-bottom: clamp(48px, 6.5vw, 120px);
+}
+
+.explainer-container {
+    max-width: clamp(370px, 62.5vw, 1152px);
+    padding: 0 var(--container-padding);
+}
+
+.explainer-content p {
+    font-size: var(--text-base);
+    line-height: clamp(22px, 1.7vw, 32px);
+    margin-bottom: clamp(24px, 2.6vw, 48px);
+}
+
+/* =============================================================================
+   SMOOTH SCROLLING
+============================================================================= */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: clamp(60px, 5.2vw, 100px);
+}
+
+/* Scrollbar styling */
+.websites::-webkit-scrollbar,
+.side-scroll::-webkit-scrollbar,
+.scroll-container::-webkit-scrollbar,
+.websites-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.websites::-webkit-scrollbar-thumb,
+.side-scroll::-webkit-scrollbar-thumb,
+.scroll-container::-webkit-scrollbar-thumb,
+.websites-grid::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+/* =============================================================================
+   VERY SMALL SCREENS - Extra safety (below 380px)
+============================================================================= */
+@media screen and (max-width: 380px) {
+    :root {
+        --text-hero: 32px;
+        --text-xl: 24px;
+        --text-lg: 19px;
+        --text-md: 16px;
+        --text-base: 14px;
+        --text-sm: 12px;
+        --text-xs: 11px;
+        --text-nav: 10px;
+    }
+}
+
+
+
+
+}
+
+
+
+/* FORCE IMAGE ABOVE TEXT FOR ALL KAZI PAIRS ON SMALL DEVICES */
+@media (max-width: 1023px) {
+
+    .kazi-container {
+        display: flex !important;
+        flex-direction: column !important; /* Normal vertical stack */
+        gap: clamp(20px, 4vw, 50px);
+    }
+
+    /* Force image to be the FIRST element visually */
+    .kazi-image-box {
+        order: -1 !important; /* Moves image to top */
+        width: 100% !important;
+        aspect-ratio: 1 / 1 !important;
+        overflow: hidden !important;
+    }
+
+    .kazi-text-box {
+        order: 2 !important; /* Always below the image */
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 1023px) {
+    .kazi-image-box {
+        aspect-ratio: 1.15 / 1 !important; /* slightly taller than square */
+        height: auto !important;
+    }
+
+    .kazi-image-box img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+}
+
+/* ===== FORCE ORIGINAL PACKAGING LAYOUT ON DESKTOP ===== */
+@media (min-width: 1024px) {
+
+    .packaging-section {
+        width: 100%;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 29.947917vw 29.947917vw 29.947917vw 31.25vw !important;
+        column-gap: 2.5vw !important;
+        box-sizing: border-box;
+    }
+
+    .text-box-main {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        padding-left: 5vw !important;
+        padding-bottom: 2.5vw !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container-right {
+        grid-column: 2 !important;
+        grid-row: 1 / 3 !important;
+        padding-right: 5vw !important;
+        padding-left: 0 !important;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container-left-top {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+        padding-left: 5vw !important;
+        padding-bottom: 2.5vw !important;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container-left-bottom {
+        grid-column: 1 !important;
+        grid-row: 3 !important;
+        padding-left: 5vw !important;
+        padding-bottom: 2.5vw !important;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text-box-secondary {
+        grid-column: 2 !important;
+        grid-row: 3 !important;
+        padding-right: 5vw !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container-full {
+        grid-column: 1 / 3 !important;
+        grid-row: 4 !important;
+        height: 31.25vw !important;
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    /* IMAGE FIX — remove premium overrides */
+    .image-container-right img,
+    .image-container-left-top img,
+    .image-container-left-bottom img,
+    .image-container-full img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        aspect-ratio: unset !important; /* cancel premium scaling */
+    }
+}
+
+
+
+/* ===== ABSOLUTE FIX FOR PACKAGING DESKTOP LAYOUT ===== */
+@media (min-width: 1024px) {
+
+    /* Undo global flex overrides */
+    .packaging-section {
+        display: grid !important;
+        flex-direction: unset !important;
+        flex-wrap: unset !important;
+    }
+
+    /* Restore exact original grid */
+    .packaging-section {
+        width: 100% !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 29.947917vw 29.947917vw 29.947917vw 31.25vw !important;
+        column-gap: 2.5vw !important;
+        padding: 0 !important;
+    }
+
+    /* Restore column/row positions */
+    .text-box-main {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        padding-left: 5vw !important;
+        padding-bottom: 2.5vw !important;
+    }
+
+    .image-container-right {
+        grid-column: 2 !important;
+        grid-row: 1 / 3 !important;
+        padding-right: 5vw !important;
+        padding-left: 0 !important;
+    }
+
+    .image-container-left-top {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+        padding-left: 5vw !important;
+        padding-bottom: 2.5vw !important;
+    }
+
+    .image-container-left-bottom {
+        grid-column: 1 !important;
+        grid-row: 3 !important;
+        padding-left: 5vw !important;
+        padding-bottom: 2.5vw !important;
+    }
+
+    .text-box-secondary {
+        grid-column: 2 !important;
+        grid-row: 3 !important;
+        padding-right: 5vw !important;
+    }
+
+    .image-container-full {
+        grid-column: 1 / 3 !important;
+        grid-row: 4 !important;
+        height: 31.25vw !important;
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
+    }
+
+    /* Cancel global aspect-ratio rules */
+    .packaging-section img {
+        aspect-ratio: unset !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+}
+
+
+
+
+/* ===== PORTFOLIO — PERFECT SQUARES ON MOBILE ===== */
+@media (max-width: 1023px) {
+
+    /* Keep your existing padding, borders, and spacing */
+    .portfolio-section,
+    .portfolio-grid,
+    .portfolio-container,
+    .portfolio-item {
+        padding: inherit !important;
+        margin: inherit !important;
+        border: inherit !important;
+        box-sizing: border-box;
+    }
+
+    /* Make ONLY the images square */
+    .portfolio-item img,
+    .portfolio-image,
+    .portfolio-card img,
+    .portfolio-section img {
+        width: 100% !important;
+        aspect-ratio: 1 / 1 !important; /* PERFECT SQUARE */
+        height: auto !important;
+        object-fit: cover !important;
+        display: block !important; /* prevents gap under images */
+    }
+}
+
+
+
+/* ============================================
+   PORTFOLIO – SQUARE IMAGES + INCREASED SIDE PADDING (MOBILE)
+   ============================================ */
+@media (max-width: 1023px) {
+
+    /* Increase left + right padding slightly */
+    .portfolio-container {
+        padding-left: 10vw !important;   /* doubled from 5vw */
+        padding-right: 10vw !important;  /* doubled from 5vw */
+        gap: 4vw !important;
+    }
+
+    /* Keep each item square */
+    .portfolio-item {
+        width: 100% !important;
+        aspect-ratio: 1 / 1 !important;
+        height: auto !important;
+        overflow: hidden !important;
+        padding: 0 !important; /* padding handled by container */
+    }
+
+    /* Image fills perfect square */
+    .portfolio-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        display: block;
+    }
+
+    /* Keep text spacing consistent */
+    .portfolio-text {
+        padding-top: 6vw !important;
+        padding-bottom: 6vw !important;
+    }
+}
+
+
+
+/* ===== SERVICES SECTION — MOBILE TEXT WRAP FIX ===== */
+@media (max-width: 600px) {
+
+  /* Make the paragraph container narrower so text wraps earlier */
+  .service-content p {
+    max-width: 85%;   /* forces earlier wrap without changing size */
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Optional: ensure nicer wrapping with balanced line breaks */
+  .service-content {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+}
+
+
+
+/* ======================================================
+   WEBSITES — RESTORED SIZE + EXTRA GAP ONLY
+   ====================================================== */
+@media (max-width: 1023px) {
+
+  /* Increase spacing between squares */
+  .websites-track,
+  .websites-wrapper,
+  .websites-scroll-container {
+      gap: 6vw !important;   /* increase or decrease this number */
+      padding-left: 5vw !important;
+      padding-right: 5vw !important;
+  }
+}
+
+
+.websites-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4vw;   /* doubled spacing */
+}
+
+
+
+/* ===== FOOTER MOBILE FIX ===== */
+@media (max-width: 600px) {
+    
+    footer {
+        padding: 16vw 6vw;
+        text-align: left;              /* Everything aligns to one side */
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;        /* Stack items vertically */
+        align-items: flex-start;       /* Align them left */
+        gap: 5vw;                      /* Clean spacing */
+    }
+
+    .footer-logo img {
+        width: 40vw;                   /* Scales nicely on mobile */
+    }
+
+    .footer-links,
+    .footer-contact,
+    .footer-socials {
+        width: 100%;
+        text-align: left;              /* Make sure content aligns left */
+    }
+
+    .footer-links ul,
+    .footer-socials ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .footer-links ul li,
+    .footer-socials ul li {
+        margin-bottom: 2vw;
+    }
+}
+
+
+/* ===============================
+   FOOTER — FIX SOCIAL ICON SIZE (MOBILE)
+   =============================== */
+@media (max-width: 600px) {
+
+    /* Resize ONLY the icons inside the footer */
+    footer .footer-socials img,
+    footer .footer-icons img,
+    footer img.social-icon {
+        width: 4vw !important;   /* perfect mobile size */
+        height: 4vw !important;  /* keeps icons square */
+        object-fit: contain;
+    }
+
+    /* Optional: increase spacing between icons */
+    footer .footer-socials img {
+        margin-right: 3vw;
+    }
+}
+
+
+
+/* =======================================
+   FOOTER — DOUBLE LEFT PADDING + ALIGN ICONS
+   (MOBILE ONLY)
+   ======================================= */
+@media (max-width: 600px) {
+
+    /* Double left padding for all footer text */
+    footer,
+    .footer-container,
+    .footer-links,
+    .footer-contact,
+    .footer-socials {
+        padding-left: 6vw !important;   
+    }
+
+    /* Align icons exactly with text */
+    footer .footer-socials img,
+    footer .footer-icons img,
+    footer img.social-icon {
+        margin-left: 0 !important;       /* ensures exact alignment */
+    }
+
+    /* Optional: clean spacing between each icon */
+    footer .footer-socials img {
+        margin-right: 4vw;
+    }
+}
+
+
+/* Fix only the Portfolio page title spacing */
+@media (max-width: 768px) {
+    #quotations .deadline-content {
+        margin-top: 12vw;   /* pushes the title down from the navbar */
+    }
+}
+
+
+
+
+/* NAVBAR BASE */
+.navbar {
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid #eee;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5vw;
+}
+
+.nav-center, .nav-right {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-center a, .nav-right a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* HAMBURGER (HIDDEN ON DESKTOP) */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* MOBILE MENU (HIDDEN BY DEFAULT) */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    padding: 1rem 5vw;
+    border-bottom: 1px solid #ddd;
+}
+
+.mobile-menu a {
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+}
+
+/* ------------------------------ */
+/* MOBILE VIEW */
+/* ------------------------------ */
+@media (max-width: 768px) {
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;  
+        align-items: center;     /* <— KEEP THIS */
+        height: 60px;            /* <— controls the vertical centering height */
+        padding: 0 20px;
+    }
+
+    /* Left side logo stays left */
+    .nav-left {
+        display: flex;
+        align-items: center;     /* ensures logo is vertically centered */
+        margin: 0;
+    }
+
+    .logo-image {
+        height: 24px;            /* adjust depending on how big you want it */
+        width: auto;
+    }
+
+    /* Hamburger on the right */
+    .hamburger {
+        display: flex;
+        align-items: center;    /* centers the 3 bars vertically */
+        justify-content: center;
+        width: 15px;
+        height: auto;
+        cursor: pointer;
+    }
+
+    /* Hide center links on mobile */
+    .nav-center,
+    .nav-right {
+        display: none;
+    }
+}
+
+
+/* Navbar text size — Mobile */
+@media (max-width: 768px) {
+
+    .mobile-menu a {
+        font-size: 3vw;          /* matches your other mobile text scaling */
+    }
+
+    .hamburger {
+        font-size: 5vw;   
+        padding-right: 3vw;
+    }
+
+
+
+    /* HERO SECTION — widen text box on mobile */
+@media (max-width: 768px) {
+    .hero-text {
+        max-width: 85%;   /* previously around 60–70% */
+        margin: 0 auto;  /* keep it centered */
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    /* Expand greenbox text container */
+    .greenbox-textbox {
+        width: 92%;          /* wider so it fills the space properly */
+        margin-left: auto;
+        margin-right: auto;  /* perfect centering */
+        padding-left: 3vw;
+        padding-right: 3vw;
+        text-align: center;  /* ensure perfect visual centering */
+    }
+
+    .greenbox-body {
+        text-align: center;  /* prevent left bias */
+        line-height: 1.6;
+    }
+}
+
+}
+
+
+
+
+/* =============================================================================
+   GREENBOX SECTION - MOBILE FIX
+   Add this to the END of your styles.css file
+============================================================================= */
+
+/* Mobile-specific fixes for greenbox section */
+@media (max-width: 1023px) {
+    
+    .greenbox-section {
+        height: auto !important;
+        min-height: unset !important;
+        padding: 8vw 0 !important;
+    }
+    
+    .greenbox-container {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: unset !important;
+        grid-template-areas: unset !important;
+        column-gap: 0 !important;
+        padding: 0 15vw !important; /* Tripled from 5vw */
+        gap: 6vw;
+    }
+    
+    /* Text box comes first on mobile */
+    .greenbox-textbox {
+        order: 1;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        justify-self: unset !important;
+        align-self: unset !important;
+    }
+    
+    /* Image box comes second */
+    .greenbox-imagebox {
+        order: 2;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        justify-self: unset !important;
+    }
+    
+    .greenbox-imagebox img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+    
+    /* Typography adjustments for better mobile readability */
+    .greenbox-title {
+        margin-bottom: 5vw !important;
+    }
+    
+    .greenbox-body {
+        margin-bottom: 5vw !important;
+    }
+}
+
+/* Extra small devices (below 600px) */
+@media (max-width: 600px) {
+    
+    .greenbox-section {
+        padding: 10vw 0 !important;
+    }
+    
+    .greenbox-container {
+        padding: 0 12vw !important; /* Tripled from 6vw */
+        gap: 8vw;
+    }
+    
+    .greenbox-title {
+        margin-bottom: 6vw !important;
+    }
+    
+    .greenbox-body {
+        margin-bottom: 6vw !important;
+        line-height: 1.6 !important;
+    }
+}
+
+@media (max-width: 1023px) {
+    
+    .websites-grid {
+        gap: 2.5vw !important; /* Doubled from 2.5vw */
+    }
+    
+    .scroll-container {
+        gap: 2.5vw !important; /* Doubled from 2.5vw */
+    }
+}
+
+
+
+
+
+@media (max-width: 1023px) {
+    
+    .websites-grid {
+        gap: 5vw !important; /* Doubled from 2.5vw */
+    }
+    
+    .scroll-container {
+        gap: 5vw !important; /* Doubled from 2.5vw */
+    }
+    
+    /* FIX SIDE-SCROLL IMAGE SQUISHING ON MOBILE */
+    .container {
+        width: 45vw !important; /* Proper width for mobile viewing */
+        height: auto !important; /* Let aspect ratio control it */
+        aspect-ratio: 459 / 1020 !important; /* Exact desktop ratio (from your CSS) */
+        min-width: 280px !important; /* Prevent too-small images */
+    }
+    
+    .container img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+    
+    .scroll-container {
+        grid-auto-columns: 45vw !important; /* Match container width */
+    }
+}
+
+/* Extra refinement for very small screens */
+@media (max-width: 600px) {
+    .container {
+        width: 60vw !important; /* Larger on small phones for better viewing */
+        aspect-ratio: 459 / 1020 !important; /* Same tall ratio */
+        min-width: 240px !important;
+    }
+    
+    .scroll-container {
+        grid-auto-columns: 60vw !important;
+    }
+}
+
+
+
+@media (max-width: 1023px) {
+    
+    .digital-section {
+        width: 100%;
+        padding-top: clamp(12px, 1.3vw, 24px);
+        padding-bottom: clamp(24px, 2.6vw, 48px);
+    }
+    
+    .digital-images {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 5vw !important;
+        padding-left: 15vw !important; /* Match greenbox padding */
+        padding-right: 15vw !important;
+    }
+    
+    /* Make both images full width and square */
+    .digital-img-square,
+    .digital-img-wide {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+        max-width: 100% !important;
+        overflow: hidden;
+    }
+    
+    .digital-img-square img,
+    .digital-img-wide img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+    
+    /*  below images */
+    .digital-text {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 15vw !important;
+        margin-top: 5vw !important;
+        text-align: center;
+        padding-bottom: clamp(48px, 6.5vw, 120px);
+    }
+}
+
+/* Extra small devices (below 600px) */
+@media (max-width: 600px) {
+    
+    .digital-images {
+        padding-left: 18vw !important;
+        padding-right: 18vw !important;
+        gap: 6vw !important;
+    }
+    
+    .digital-text {
+        padding: 0 18vw !important;
+        margin-top: 6vw !important;
+    }
+}
+
+
+
+/* CONSULTANCY SECTION - INCREASE IMAGE SIZE ON MOBILE */
+@media (max-width: 1023px) {
+    
+    .consultancy-image-left {
+        padding-left: 3vw !important;
+        padding-right: 3vw !important;
+    }
+    
+    .consultancy-image-right {
+        padding-left: 3vw !important;
+        padding-right: 3vw !important;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .consultancy-image-left,
+    .consultancy-image-right {
+        padding-left: 3vw !important;
+        padding-right: 3vw !important;
+    }
+}
+
+/* CONSULTANCY SECTION - DECREASE TITLE TO IMAGE DISTANCE */
+@media (max-width: 1023px) {
+    
+    .title-left,
+    .title-right {
+        padding-bottom: 2vw !important;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .title-left,
+    .title-right {
+        padding-bottom: 3vw !important;
+    }
+}
+
+
+/* PACKAGING SECTION - FIX DESKTOP LAYOUT */
+@media (min-width: 1024px) {
+    
+    .packaging-section {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 29.947917vw 29.947917vw 29.947917vw 31.25vw !important;
+        column-gap: 2.5vw !important;
+        row-gap: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .text-box-main {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        padding-left: 5vw !important;
+        padding-right: 0 !important;
+        padding-bottom: 2.5vw !important;
+    }
+    
+    .image-container-right {
+        grid-column: 2 !important;
+        grid-row: 1 / 3 !important; /* Spans 2 rows */
+        padding-right: 5vw !important;
+        padding-left: 0 !important;
+        padding-bottom: 2.5vw !important;
+    }
+    
+    .image-container-left-top {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+        padding-left: 5vw !important;
+        padding-right: 0 !important;
+        padding-bottom: 2.5vw !important;
+    }
+    
+    .image-container-left-bottom {
+        grid-column: 1 !important;
+        grid-row: 3 !important;
+        padding-left: 5vw !important;
+        padding-right: 0 !important;
+        padding-bottom: 2.5vw !important;
+    }
+    
+    .text-box-secondary {
+        grid-column: 2 !important;
+        grid-row: 3 !important;
+        padding-right: 5vw !important;
+        padding-left: 0 !important;
+    }
+    
+    .image-container-full {
+        grid-column: 1 / 3 !important; /* Spans both columns */
+        grid-row: 4 !important;
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
+    }
+    
+    /* Remove aspect ratio override for packaging images on desktop */
+    .packaging-section .image-container-right,
+    .packaging-section .image-container-left-top,
+    .packaging-section .image-container-left-bottom,
+    .packaging-section .image-container-full {
+        aspect-ratio: unset !important;
+    }
+    
+    .packaging-section img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+}
+
+
+/* PACKAGING SECTION - MOBILE LAYOUT (EQUAL HEIGHT IMAGES) */
+@media (max-width: 1023px) {
+    
+    .packaging-section {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto auto auto auto !important;
+        column-gap: 5vw !important;
+        row-gap: 5vw !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Title at top, spans both columns */
+    .text-box-main {
+        grid-column: 1 / 3 !important;
+        grid-row: 1 !important;
+        width: 100% !important;
+        padding: 5vw 6.25vw !important;
+        text-align: center;
+    }
+    
+    /* Second row: Both images same height */
+    .image-container-left-top {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+        width: 100% !important;
+        aspect-ratio: 1 / 1.5 !important; /* Same as right */
+        padding: 0 0 0 6.25vw !important;
+    }
+    
+    .image-container-right {
+        grid-column: 2 !important;
+        grid-row: 2 !important;
+        width: 100% !important;
+        aspect-ratio: 1 / 1.5 !important; /* Same as left */
+        padding: 0 6.25vw 0 0 !important;
+    }
+    
+    /* Third row: wide image spans both columns */
+    .image-container-left-bottom {
+        grid-column: 1 / 3 !important;
+        grid-row: 3 !important;
+        width: 100% !important;
+        aspect-ratio: 2 / 1 !important;
+        padding: 0 6.25vw !important;
+    }
+    
+    /* Bottom row: FULL WIDTH image (no padding) */
+    .image-container-full {
+        grid-column: 1 / 3 !important;
+        grid-row: 4 !important;
+        width: 100% !important;
+        aspect-ratio: 2 / 1 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Hide secondary text box on mobile */
+    .text-box-secondary {
+        display: none !important;
+    }
+    
+    /* Make sure images fill containers */
+    .packaging-section img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+}
+
+
+/* NAVBAR - CONSISTENT 18PX FONT SIZE SCALING */
+/* NAVBAR - FIX FONT SIZE APPEARANCE */
+.nav-link,
+.logo-text {
+    font-size: 0.9375vw; /* 18px at 1920px */
+    font-family: 'Poppins', sans-serif !important; /* Force Poppins */
+    font-weight: 700 !important; /* Ensure bold is applied */
+    -webkit-font-smoothing: antialiased; /* Better rendering */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 1023px) {
+    .nav-link,
+    .logo-text {
+        font-size: clamp(13px, 0.33vw + 11.6px, 18px) !important;
+    }
+}
+
+
+
+/* NAVBAR - FORCE CORRECT SIZE (FINAL OVERRIDE) */
+.nav-link,
+.logo-text,
+.nav-center a,
+.nav-right a {
+    font-size: 0.9375vw !important; /* 18px at 1920px */
+}
+
+@media (max-width: 1023px) {
+    .nav-link,
+    .logo-text,
+    .nav-center a,
+    .nav-right a {
+        font-size: clamp(13px, 0.33vw + 11.6px, 18px) !important;
+    }
+}
+
+
+
+
+
+/* NAVBAR - FORCE CORRECT SIZE (FINAL OVERRIDE) */
+.nav-link,
+.logo-text,
+.nav-center a,
+.nav-right a {
+    font-size: 0.9375vw !important; /* 18px at 1920px */
+}
+
+@media (max-width: 1023px) {
+    .nav-link,
+    .logo-text,
+    .nav-center a,
+    .nav-right a {
+        font-size: clamp(13px, 0.33vw + 11.6px, 18px) !important;
+    }
+    
+    /* INCREASE NAVBAR HEIGHT ON MOBILE ONLY */
+    .navbar {
+        height: clamp(72px, 8vw, 120px) !important; /* Increased from 60px-100px */
+    }
+    
+    .nav-container {
+        height: 100%;
+    }
+    
+    /* INCREASE LOGO SIZE ON MOBILE */
+    .logo-image {
+        height: clamp(28px, 3vw, 48px) !important; /* Increased from 24px-32px */
+    }
+}
+
+
+@media (max-width: 1023px) {
+    .hero-section {
+        height: clamp(860px, 65vw, 1200px) !important; 
+    }
+    
+    .hero-image {
+        height: 100%;
+    }
+}
+
+@media (max-width: 1023px) {
+    .hero-text h1 {
+        font-size: clamp(40px, 6vw, 80px) !important;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(18px, 3vw, 28px) !important;
+    }
+}
+
+
+/* WEBSITES SECTION - MOBILE IMAGE SIZE INCREASE */
+@media (max-width: 1023px) {
+    .websites-grid {
+        grid-auto-columns: clamp(320px, 65vw, 500px) !important;
+        gap: 4vw !important;
+    }
+    
+    .website-card-image {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1/1 !important;
+    }
+    
+    .website-card {
+        width: 100% !important;
+    }
+}
+
+/* Extra large images on very small screens */
+@media (max-width: 600px) {
+    .websites-grid {
+        grid-auto-columns: clamp(280px, 75vw, 400px) !important;
+        gap: 5vw !important;
+    }
+}
+
+
+/* SERVICES SECTION - MOBILE IMAGE HEIGHT INCREASE */
+@media (max-width: 1023px) {
+    .service-card {
+        height: clamp(420px, 45vw, 700px) !important;
+    }
+    
+    .image-wrapper {
+        height: 100% !important;
+    }
+    
+    .image-wrapper img {
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+}
+
+/* SERVICES SECTION - MOBILE EQUAL GAP AND PADDING */
+@media (max-width: 1023px) {
+    .services-section {
+        gap: 5vw !important; /* Match the 5vw left/right padding from service-card */
+    }
+    
+    .service-card {
+        width: calc(100% - 10vw) !important; /* Maintain existing width calculation */
+        margin-left: 5vw !important;
+        margin-right: 5vw !important;
+    }
+}
+
+/* Fine-tuning for very small screens */
+@media (max-width: 600px) {
+    .services-section {
+        gap: 6vw !important; /* Match increased padding on smaller screens */
+    }
+    
+    .service-card {
+        margin-left: 6vw !important;
+        margin-right: 6vw !important;
+    }
+}
+
+/* PRO SECTION - DOUBLE TOP/BOTTOM PADDING ON MOBILE */
+@media (max-width: 1023px) {
+    .pro-section {
+        padding-top: 25vw !important; /* Doubled from 12.5vw */
+        padding-bottom: 25vw !important; /* Maintain existing bottom padding */
+    }
+}
+
+/* For very small screens */
+@media (max-width: 600px) {
+    .pro-section {
+        padding-top: 30vw !important; /* Further increased on small screens */
+        padding-bottom: 30vw !important;
+    }
+}
+
+
+/* PACKAGING SECTION - HALVE PADDING AND SPACING ON MOBILE */
+@media (max-width: 1023px) {
+    .packaging-section {
+        column-gap: 2.5vw !important; /* Halved from 5vw */
+        row-gap: 2.5vw !important; /* Halved from 5vw */
+    }
+    
+    .text-box-main,
+    .image-container-left-top,
+    .image-container-left-bottom {
+        padding-left: 3.125vw !important; /* Halved from 6.25vw */
+        padding-bottom: 2.5vw !important; /* Maintain existing */
+    }
+    
+    .image-container-right,
+    .text-box-secondary {
+        padding-right: 3.125vw !important; /* Halved from 6.25vw */
+    }
+    
+    .image-container-full {
+        padding-left: 3.125vw !important; /* Halved from 6.25vw */
+        padding-right: 3.125vw !important; /* Halved from 6.25vw */
+    }
+}
+
+
+
+/* PACKAGING SECTION - REMOVE ALL INNER SPACING ON MOBILE */
+@media (max-width: 1023px) {
+    .packaging-section {
+        column-gap: 3vw !important;
+        row-gap: 3vw !important;
+    }
+    
+    .text-box-main,
+    .image-container-left-top,
+    .image-container-left-bottom,
+    .image-container-right,
+    .text-box-secondary,
+    .image-container-full {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}
+
+/* DEADLINE SECTION - DOUBLE TOP/BOTTOM PADDING ON MOBILE */
+@media (max-width: 1023px) {
+    .deadline-section {
+        padding-top: 25vw !important; /* Doubled from 12.5vw */
+        padding-bottom: 25vw !important; /* Maintain existing bottom padding */
+    }
+}
+
+/* For very small screens */
+@media (max-width: 600px) {
+    .deadline-section {
+        padding-top: 30vw !important; /* Further increased on small screens */
+        padding-bottom: 30vw !important;
+    }
+}
+
+
+/* PACKAGING SECTION - 3VW SPACING ON MOBILE */
+@media (max-width: 1023px) {
+    .packaging-section {
+        column-gap: 3vw !important;
+        row-gap:1.5vw !important;
+    }
+    
+    .text-box-main,
+    .image-container-left-top,
+    .image-container-left-bottom {
+        padding-left: 3vw !important;
+        padding-bottom: 3vw !important;
+    }
+    
+    .image-container-right,
+    .text-box-secondary {
+        padding-right: 3vw !important;
+        padding-bottom: 3vw !important;
+    }
+    
+    .image-container-full {
+        padding-left: 3vw !important;
+        padding-right: 3vw !important;
+        padding-bottom: 3vw !important;
+    }
+}
+
+
+/* POWERPOINT VIDEO - FULL WIDTH END TO END ON MOBILE */
+@media (max-width: 1023px) {
+    .powerpoint-video {
+        padding-left: 3vw !important;
+        height: auto;
+        padding-right: 3vw!important;
+    }
+    
+    .video-wrapper {
+        width: 100vw !important;
+        max-width: none !important;
+        border-radius: 0 !important;
+        height: auto;
+    }
+    
+    .video-wrapper iframe {
+        border-radius: 0 !important;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .hero-image {
+        width: 110% !important; /* MUST be >100% */
+        transform: translateX(-5%); /* Hide left 5% */
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        overflow: hidden;
+           
+    }
+    
+    .hero-image {
+        width: 120% !important;
+        margin-left: -25%;
+        margin-right: 10%;
+        transform: translateX(-5%);
+    
+    }
+}
+
+
+
+@media (max-width: 1023px) {
+    .hero-content {
+        overflow: hidden;
+    }
+    
+    .hero-image {
+        width: 150% !important; /* Less width on mobile */
+        margin-left: -45%; /* Less margin on mobile */
+        margin-right: -10%;
+        transform: translateX(-5%);
+    }
+}
+
+.service-card .image-wrapper {
+    overflow: hidden;
+}
+
+.service-card .image-wrapper img {
+    transform: scale(1.3);
+    will-change: transform;
+}
+
+
+.services-hero-image {
+    width: 100%;
+    height: 140%; /* Much taller image */
+    object-fit: cover;
+    transform: translateY(-15%); /* Start higher up */
+    will-change: transform;
+}
+
+
+html, body {
+    scroll-behavior: smooth;
+}
+
+
+@media (max-width: 1023px) {
+    .kazi-image-box {
+        width: 94vw !important;
+        height: 94vw !important;
+        margin: 0 auto;
+    }
+    
+    .kazi-container {
+        padding-left: 3vw !important;
+        padding-right: 3vw !important;
+    }
+}
+
+
+/* Force mobile kazi image size */
+@media screen and (max-width: 1023px) {
+    .kazi-section .kazi-container .kazi-image-box,
+    .kazi-image-box {
+        width: 94vw !important;
+        height: 94vw !important;
+        max-width: 94vw !important;
+        max-height: 94vw !important;
+        min-width: 94vw !important;
+        min-height: 94vw !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+    
+    .kazi-container {
+        padding-left: 3vw !important;
+        padding-right: 3vw !important;
+        gap: 5vw !important;
+    }
+}
+
+
+.elevate-section {
+    overflow: hidden;
+    position: relative;
+}
+
+.elevate-image {
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+
+@media screen and (max-width: 1023px) {
+    .consultancy-section {
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .consultancy-section {
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
+    }
+    
+    .title-left {
+        padding-left: 0 !important;
+    }
+    
+    .consultancy-image-left {
+        padding-left: 0 !important;
+    }
+    
+    .text-box {
+        padding-left: 0 !important;
+    }
+    
+    .list-container {
+        padding-left: 0 !important;
+    }
+    
+    .consultancy-image-right {
+        padding-right: 0 !important;
+    }
+}
+
+
+@media (max-width: 1023px) {
+    .consultancy-section {
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
+    }
+    
+    .title-left,
+    .title-right {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    .consultancy-image-left,
+    .consultancy-image-right {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    .text-box {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    .list-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+@media (max-width: 1023px) {
+    .consultancy-image-left img,
+    .consultancy-image-right img {
+        width: 100% !important;
+        max-width: 100% !important;
+        aspect-ratio: 1 / 1 !important;
+        height: auto !important;
+        object-fit: cover !important;
+    }
+    
+    .consultancy-image-left,
+    .consultancy-image-right {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+
+
+@media (max-width: 1023px) {
+    .packaging-section {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto auto auto auto !important;
+        column-gap: 2.5vw !important;
+        row-gap: 2.5vw !important;
+        padding: 0 5vw !important;
+    }
+    
+    /* Title at top left */
+    .text-box-main {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        padding: 0 !important;
+        margin-bottom: 2.5vw !important;
+    }
+    
+    /* Top right image spans 2 rows */
+    .image-container-right {
+        grid-column: 2 !important;
+        grid-row: 1 / 3 !important;
+        aspect-ratio: 1 / 2 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Middle left image - REMOVE EXTRA PADDING */
+    .image-container-left-top {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+        aspect-ratio: 1 / 1 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    /* Bottom left image - REMOVE EXTRA PADDING */
+    .image-container-left-bottom {
+        grid-column: 1 !important;
+        grid-row: 3 !important;
+        aspect-ratio: 1 / 1 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    /* Bottom right text box */
+    .text-box-secondary {
+        display: flex !important;
+        grid-column: 2 !important;
+        grid-row: 3 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Full width image at bottom */
+    .image-container-full {
+        grid-column: 1 / 3 !important;
+        grid-row: 4 !important;
+        aspect-ratio: 2 / 1 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        margin-top: 2.5vw !important;
+    }
+    
+    /* Ensure images fill containers properly */
+    .packaging-section img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+}
+
+
+@media (max-width: 1023px) {
+    .digital-section {
+        width: 100%;
+        padding-top: clamp(12px, 1.3vw, 24px);
+        padding-bottom: clamp(24px, 2.6vw, 48px);
+    }
+    
+    .digital-images {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2.5vw !important;
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
+    }
+    
+    /* Left square image */
+    .digital-img-square {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+        max-width: 100% !important;
+        overflow: hidden;
+    }
+    
+    /* Right wide image */
+    .digital-img-wide {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+        max-width: 100% !important;
+        overflow: hidden;
+    }
+    
+    .digital-img-square img,
+    .digital-img-wide img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+    
+    /* Text below images */
+    .digital-text {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 5vw !important;
+        margin-top: 5vw !important;
+        text-align: center;
+        padding-bottom: clamp(48px, 6.5vw, 120px);
+    }
+}
+
+
+@media (max-width: 1023px) {
+    .title-section {
+        padding-top: 2vw !important;
+        padding-bottom: 1vw !important;
+    }
+}
+
+@media (max-width: 1023px) {
+    .explainer-section {
+        padding-top: 6vw !important;
+    }
+}
