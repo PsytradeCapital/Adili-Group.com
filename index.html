@@ -440,31 +440,31 @@ Elevate Brand Section
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 <script>
-// Service section zoom scroll - smoother animation
+// Service section zoom scroll - RESTORED ORIGINAL FLUSHY
 gsap.to(".service-card .image-wrapper img", {
-    scale: 1.1,
+    scale: 1,
     ease: "none",
     scrollTrigger: {
         trigger: ".services-section",
-        start: "top 80%",
-        end: "bottom 20%",
-        scrub: 1,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 2,
         markers: false
     }
 });
     
-// Horizontal reveal parallax - smoother movement
+// Horizontal reveal parallax - RESTORED ORIGINAL FLUSHY
 if (window.innerWidth >= 1024) {
     gsap.registerPlugin(ScrollTrigger);
     
     gsap.to(".hero-image", {
-        x: "15%",
+        x: "20%",
         ease: "none",
         scrollTrigger: {
             trigger: ".hero-section",
-            start: "top 100%",
-            end: "bottom 0%",
-            scrub: 0.5,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
             markers: false
         }
     });
@@ -593,65 +593,77 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Smooth image loading - prevents cutting effect
+// Better image loading - prevents cutting without hiding images
 document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('img[loading="lazy"]');
     
     images.forEach(img => {
-        img.addEventListener('load', function() {
-            this.classList.add('loaded');
-        });
-        
-        // If image is already loaded
-        if (img.complete) {
+        // Show image immediately if already loaded
+        if (img.complete && img.naturalHeight !== 0) {
             img.classList.add('loaded');
+            img.style.opacity = '1';
+        } else {
+            // Only hide if not loaded yet
+            img.style.opacity = '0';
+            
+            img.addEventListener('load', function() {
+                this.classList.add('loaded');
+                this.style.opacity = '1';
+            });
         }
+    });
+    
+    // Ensure all eager-loading images are visible
+    document.querySelectorAll('img[loading="eager"]').forEach(img => {
+        img.style.opacity = '1';
     });
 });
 
-// Smooth service card animations - like FutureThree
+// Enhanced intense hover-up animation - RESTORED FLUSHY EFFECTS
 gsap.utils.toArray('.service-card').forEach((card, i) => {
     gsap.fromTo(card, {
-        y: 60,
-        opacity: 0
+        y: 100,
+        opacity: 1,
+        rotationX: 15
     }, {
         y: 0,
         opacity: 1,
-        duration: 1,
-        ease: "power2.out",
+        rotationX: 0,
+        duration: 1.2,
+        ease: "power3.out",
         scrollTrigger: {
             trigger: card,
-            start: "top 90%",
-            end: "bottom 10%",
+            start: "top 85%",
+            end: "bottom 20%",
             toggleActions: "play none none reverse",
             markers: false
         }
     });
 });
 
-// Greenbox image gentle zoom - smoother like FutureThree
+// Greenbox image scrub zoom - RESTORED ORIGINAL FLUSHY
 gsap.to(".greenbox-imagebox img", {
-    scale: 1.05,
+    scale: 1.2,
     ease: "none",
     scrollTrigger: {
         trigger: ".greenbox-section", 
-        start: "top 80%",
-        end: "bottom 20%",
-        scrub: 0.5,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
         markers: false
     }
 });
 
 
-// Elevate section gentle parallax - smoother movement
+// Elevate section parallax - RESTORED ORIGINAL FLUSHY
 gsap.to(".elevate-image", {
-    y: "-10%",
+    y: "-20%",
     ease: "none",
     scrollTrigger: {
         trigger: ".elevate-section",
-        start: "top 100%",
-        end: "bottom 0%",
-        scrub: 0.3,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
         markers: false
     }
 });

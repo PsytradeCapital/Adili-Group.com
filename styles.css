@@ -807,8 +807,13 @@ body {
 
 /* Smooth image loading - prevents cutting during scroll */
 img {
-    opacity: 0;
+    opacity: 1; /* Show images by default */
     transition: opacity 0.3s ease;
+}
+
+/* Only hide lazy-loaded images initially */
+img[loading="lazy"]:not(.loaded) {
+    opacity: 0;
 }
 
 img.loaded,
