@@ -253,7 +253,7 @@ About us Services
     <!-- 10. Elevate Brand Section -->
     <section class="elevate-section" id="contact">
         <div class="magenta-bar-vertical-left"></div>
-        <img src="images/F.webp" alt="Elevate your brand" class="elevate-image" loading="lazy" width="1920" height="720" decoding="async">
+        <img src="images/F.webp" alt="Elevate your brand" class="elevate-image" loading="eager" width="1920" height="720" decoding="async">
         <div class="elevate-content">
             <h2>Elevate Your Brand Today!!</h2>
             <p class="magenta-label">F24</p>
@@ -478,6 +478,32 @@ document.addEventListener('DOMContentLoaded', function() {
     if ('scrollBehavior' in document.documentElement.style) {
         document.documentElement.style.scrollBehavior = 'smooth';
     }
+});
+
+// Better image loading - prevents cutting without hiding images
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    
+    images.forEach(img => {
+        // Show image immediately if already loaded
+        if (img.complete && img.naturalHeight !== 0) {
+            img.classList.add('loaded');
+            img.style.opacity = '1';
+        } else {
+            // Only hide if not loaded yet
+            img.style.opacity = '0';
+            
+            img.addEventListener('load', function() {
+                this.classList.add('loaded');
+                this.style.opacity = '1';
+            });
+        }
+    });
+    
+    // Ensure all eager-loading images are visible
+    document.querySelectorAll('img[loading="eager"]').forEach(img => {
+        img.style.opacity = '1';
+    });
 });
 
 // Enhanced intense hover-up animation
