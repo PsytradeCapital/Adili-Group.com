@@ -440,31 +440,31 @@ Elevate Brand Section
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 <script>
-// Service section zoom scroll
+// Service section zoom scroll - smoother animation
 gsap.to(".service-card .image-wrapper img", {
-    scale: 1,
+    scale: 1.1,
     ease: "none",
     scrollTrigger: {
         trigger: ".services-section",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 2,
+        start: "top 80%",
+        end: "bottom 20%",
+        scrub: 1,
         markers: false
     }
 });
     
-// Horizontal reveal parallax - UPDATED
+// Horizontal reveal parallax - smoother movement
 if (window.innerWidth >= 1024) {
     gsap.registerPlugin(ScrollTrigger);
     
     gsap.to(".hero-image", {
-        x: "20%",
+        x: "15%",
         ease: "none",
         scrollTrigger: {
             trigger: ".hero-section",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1,
+            start: "top 100%",
+            end: "bottom 0%",
+            scrub: 0.5,
             markers: false
         }
     });
@@ -593,51 +593,65 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Enhanced intense hover-up animation
+// Smooth image loading - prevents cutting effect
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    
+    images.forEach(img => {
+        img.addEventListener('load', function() {
+            this.classList.add('loaded');
+        });
+        
+        // If image is already loaded
+        if (img.complete) {
+            img.classList.add('loaded');
+        }
+    });
+});
+
+// Smooth service card animations - like FutureThree
 gsap.utils.toArray('.service-card').forEach((card, i) => {
     gsap.fromTo(card, {
-        y: 100,
-        opacity: 1,
-        rotationX: 15
+        y: 60,
+        opacity: 0
     }, {
         y: 0,
         opacity: 1,
-        rotationX: 0,
-        duration: 1.2,
-        ease: "power3.out",
+        duration: 1,
+        ease: "power2.out",
         scrollTrigger: {
             trigger: card,
-            start: "top 85%",
-            end: "bottom 20%",
+            start: "top 90%",
+            end: "bottom 10%",
             toggleActions: "play none none reverse",
             markers: false
         }
     });
 });
 
-// Greenbox image scrub zoom
+// Greenbox image gentle zoom - smoother like FutureThree
 gsap.to(".greenbox-imagebox img", {
-    scale: 1.2,
+    scale: 1.05,
     ease: "none",
     scrollTrigger: {
         trigger: ".greenbox-section", 
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
+        start: "top 80%",
+        end: "bottom 20%",
+        scrub: 0.5,
         markers: false
     }
 });
 
 
-// Elevate section parallax (same as home hero)
+// Elevate section gentle parallax - smoother movement
 gsap.to(".elevate-image", {
-    y: "-20%",
+    y: "-10%",
     ease: "none",
     scrollTrigger: {
         trigger: ".elevate-section",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1,
+        start: "top 100%",
+        end: "bottom 0%",
+        scrub: 0.3,
         markers: false
     }
 });

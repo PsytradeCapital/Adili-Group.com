@@ -802,18 +802,38 @@ body {
 }
 
 /* =============================================================================
-   ANIMATIONS
+   ANIMATIONS & IMAGE LOADING
 ============================================================================= */
+
+/* Smooth image loading - prevents cutting during scroll */
+img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img.loaded,
+img[loading="eager"] {
+    opacity: 1;
+}
+
+/* Section animations */
 section {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 section.fade-in,
 section.hero-section {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Prevent layout shift during image loading */
+.image-wrapper,
+.portfolio-item,
+.greenbox-imagebox {
+    background: #f5f5f5;
 }
 
 
