@@ -812,9 +812,11 @@ img {
     transition: opacity 0.3s ease;
 }
 
-/* Only hide lazy-loaded images initially */
-img[loading="lazy"]:not(.loaded) {
-    opacity: 0;
+/* Faster image loading - show images immediately, fade in when loaded */
+img[loading="lazy"] {
+    opacity: 1; /* Show placeholder immediately */
+    background: #f0f0f0; /* Light background while loading */
+    transition: opacity 0.2s ease;
 }
 
 img.loaded,
