@@ -18,17 +18,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cascadia+Code:wght@400;700&display=swap" rel="stylesheet">
-<!-- Preload ALL critical images for instant loading -->
+<!-- Preload ONLY critical above-the-fold images -->
 <link rel="preload" as="image" href="images/A.webp">
 <link rel="preload" as="image" href="images/adili group logo.webp">
-<link rel="preload" as="image" href="images/B.webp">
-<link rel="preload" as="image" href="images/Branding.webp">
-<link rel="preload" as="image" href="images/Frontend.webp">
-<link rel="preload" as="image" href="images/Consultation.webp">
-<link rel="preload" as="image" href="images/F.webp">
-<link rel="preload" as="image" href="images/sign post.webp">
-<link rel="preload" as="image" href="images/minimalistic.webp">
-<link rel="preload" as="image" href="images/frontend 1.webp">
 
     <!-- Structured Data for Google Sitelinks -->
     <script type="application/ld+json">
@@ -222,7 +214,7 @@
   <!-- Service 1: PowerPoint Designs -->
   <div class="service-card">
     <div class="image-wrapper">
-      <img src="images/B.webp" alt="PowerPoint Designs" loading="eager" width="1920" height="600" decoding="async">
+      <img src="images/B.webp" alt="PowerPoint Designs" loading="lazy" width="1920" height="600" decoding="async">
     </div>
     <div class="service-content">
       <h3>Cooperate Presentation<br>Decks</h3>
@@ -236,7 +228,7 @@
   <!-- Service 2: Brand Identity -->
   <div class="service-card">
     <div class="image-wrapper">
-      <img src="images/Branding.webp" alt="Brand Identity" loading="eager" width="1920" height="600" decoding="async">
+      <img src="images/Branding.webp" alt="Brand Identity" loading="lazy" width="1920" height="600" decoding="async">
     </div>
     <div class="service-content">
       <h3>Brand Identity &<br>Packaging Design</h3>
@@ -248,7 +240,7 @@
   <!-- Service 3: Multi-Platform Development -->
   <div class="service-card">
     <div class="image-wrapper">
-      <img src="images/Frontend.webp" alt="Multi-Platform Development" loading="eager" width="1920" height="600" decoding="async">
+      <img src="images/Frontend.webp" alt="Multi-Platform Development" loading="lazy" width="1920" height="600" decoding="async">
     </div>
     <div class="service-content">
       <h3>Cross-Platform<br> Development</h3>
@@ -260,7 +252,7 @@
   <!-- Service 4: Digital Support -->
   <div class="service-card">
     <div class="image-wrapper">
-      <img src="images/Consultation.webp" alt="Digital Support" loading="eager" width="1920" height="600" decoding="async">
+      <img src="images/Consultation.webp" alt="Digital Support" loading="lazy" width="1920" height="600" decoding="async">
     </div>
     <div class="service-content">
       <h3>Digital Support &<br>Consultancy</h3>
@@ -321,7 +313,7 @@ doesn’t just exist, it commands attention.
 
         <!-- IMAGE BOX -->
         <div class="greenbox-imagebox">
-            <img src="images/sign post.webp" alt="Greenbox Image" loading="eager" width="840" height="600" decoding="async">
+            <img src="images/sign post.webp" alt="Greenbox Image" loading="lazy" width="840" height="600" decoding="async">
         </div>
 
     </div>
@@ -598,26 +590,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// INSTANT image loading - no delays, keep flushy effects
+// OPTIMIZED image loading - prioritize critical images only
 document.addEventListener('DOMContentLoaded', function() {
-    // Make ALL images visible immediately
-    document.querySelectorAll('img').forEach(img => {
-        img.style.opacity = '1';
-        img.classList.add('loaded');
+    // Only preload hero image immediately
+    const heroImg = document.querySelector('.hero-image');
+    if (heroImg) {
+        heroImg.style.opacity = '1';
+        heroImg.classList.add('loaded');
+    }
+    
+    // Load other images progressively as they come into view
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.style.opacity = '1';
+                img.classList.add('loaded');
+                observer.unobserve(img);
+            }
+        });
     });
     
-    // Force immediate loading for critical images
-    const criticalImages = [
-        'images/A.webp',
-        'images/B.webp', 
-        'images/Branding.webp',
-        'images/Frontend.webp',
-        'images/F.webp'
-    ];
-    
-    criticalImages.forEach(src => {
-        const img = new Image();
-        img.src = src;
+    // Observe all non-hero images
+    document.querySelectorAll('img:not(.hero-image)').forEach(img => {
+        imageObserver.observe(img);
     });
 });
 
